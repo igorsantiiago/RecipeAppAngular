@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Recipe } from 'src/app/models/recipe';
 
 @Component({
@@ -8,9 +8,11 @@ import { Recipe } from 'src/app/models/recipe';
 })
 
 export class RecipeListComponent implements OnInit {
+  @Output() recipeWasSelected = new EventEmitter<Recipe>();
   recipes: Recipe[] = [
-    new Recipe('A Test Recipe', 'This is a description for the recipe', 'https://duet-cdn.vox-cdn.com/thumbor/0x0:3024x4032/1920x2560/filters:focal(2130x3256:2131x3257):format(webp)/cdn.vox-cdn.com/uploads/chorus_asset/file/25181362/ai_chocolate_cakes.jpg'),
-    new Recipe('A Test Recipe', 'This is a description for the recipe', 'https://duet-cdn.vox-cdn.com/thumbor/0x0:3024x4032/1920x2560/filters:focal(2130x3256:2131x3257):format(webp)/cdn.vox-cdn.com/uploads/chorus_asset/file/25181362/ai_chocolate_cakes.jpg')
+    new Recipe('Croissant', 'Descrição para a receita de croissant.', 'https://res.cloudinary.com/dz4vge9zk/image/upload/v1708355988/udemy-recipeapp/hbb55kkx7qqpibi8uxh2.jpg'),
+    new Recipe('Macarronada', 'Descrição para a receita de macarronada.', 'https://res.cloudinary.com/dz4vge9zk/image/upload/v1708355988/udemy-recipeapp/eydiaphhe0dhbvb0i9be.jpg'),
+    new Recipe('Pizza', 'Descrição para a receita de pizza.', 'https://res.cloudinary.com/dz4vge9zk/image/upload/v1708355988/udemy-recipeapp/uia38xen8odcrpqcmfvr.jpg')
   ];
 
   constructor() {
@@ -18,4 +20,8 @@ export class RecipeListComponent implements OnInit {
   }
 
   ngOnInit(): void { }
+
+  onRecipeSelected(recipe: Recipe) {
+    this.recipeWasSelected.emit(recipe);
+  }
 }
