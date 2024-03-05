@@ -1,0 +1,29 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 80vh;
+    min-height: 80vh;
+    border: 1px solid #00000050;
+    border-radius: 50px;
+    transition: 1.2s;
+    opacity: .3;
+    box-shadow: 10px 10px 10px 10px #00000050;
+}
+
+.container:hover {
+    opacity: 1.5;
+    border-radius: 75px;
+    transition: 1s;
+    opacity: .6;
+}
+
+.recipe-list-home__title {
+    font-size: 2rem;
+    opacity: .3;
+    text-align: center;
+}
+
+.recipe-list-home__title::after {
+    content: "Selecione a receita";
+}

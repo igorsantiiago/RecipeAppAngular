@@ -1,8 +1,13 @@
 .navigation {
     box-shadow: 1px 1px 10px 1px black;
     margin-bottom: 5vh;
+    background-color: #00000030;
 }
 
 .navigation-links:hover {
     font-weight: 500;
+}
+
+.linkActive {
+    border-top: 2px solid #00000030;
 }

@@ -1,0 +1,30 @@
+.btn-success {
+    opacity: .5;
+    transition: .3s;
+}
+
+.btn-success:hover {
+    opacity: 1;
+}
+
+.container-list-recipe {
+    min-height: 75vh;
+    max-height: 75vh;
+    margin-bottom: 30px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.container-list-recipe::-webkit-scrollbar {
+    width: 6px;
+}
+
+.container-list-recipe::-webkit-scrollbar-thumb {
+    background-color: #00000009;
+    border-radius: 30px;
+    height: 40px;
+}
+
+.container-list-recipe::-webkit-scrollbar-track {
+    background-color: #00000000;
+}

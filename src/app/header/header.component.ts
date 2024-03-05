@@ -7,15 +7,10 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class HeaderComponent {
   collapsed = true;
-  @Output() featureSelected = new EventEmitter<string>();
 
   constructor() { }
 
   toggleCollapsed(): void {
     this.collapsed = !this.collapsed;
-  }
-
-  onSelect(feature: string) {
-    this.featureSelected.emit(feature);
   }
 }

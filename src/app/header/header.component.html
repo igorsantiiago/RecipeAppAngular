@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg rounded-bottom-5 navigation" style="background-color: #00000030;">
+<nav class="navbar navbar-expand-lg rounded-bottom-5 navigation">
     <div class="container-fluid ps-4">
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -6,14 +6,14 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <a class="navbar-brand" href="/">Livro de Receitas</a>
+        <a class="navbar-brand" routerLink="/">Livro de Receitas</a>
         <div class="collapse navbar-collapse" id="navbarNav" [class.show]="!collapsed">
 
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item"><a href="#" class="nav-link active navigation-links"
-                        (click)="onSelect('recipe')">Receitas</a></li>
-                <li class="nav-item"><a href="#" class="nav-link active navigation-links"
-                        (click)="onSelect('shopping-list')">Lista de
+                <li class="nav-item" routerLinkActive="linkActive"><a class="nav-link active navigation-links"
+                        routerLink="/recipes">Receitas</a></li>
+                <li class="nav-item" routerLinkActive="linkActive"><a class="nav-link active navigation-links"
+                        routerLink="/shopping-list">Lista de
                         Compras</a></li>
             </ul>
 
@@ -22,8 +22,8 @@
                     <button class="btn bg-transparent dropdown-toggle" appDropdown>Gerenciar</button>
 
                     <div class="dropdown-menu">
-                        <li><a href="#" class="dropdown-item">Salvar</a></li>
-                        <li><a href="#" class="dropdown-item">Atualizar</a></li>
+                        <li><a class="dropdown-item cursor-pointer">Salvar</a></li>
+                        <li><a class="dropdown-item cursor-pointer">Atualizar</a></li>
                     </div>
                 </div>
             </div>

@@ -18,12 +18,25 @@ export class ShoppingListService {
   }
 
   addIngredient(ingredient: Ingredient) {
-    this.ingredients.push(ingredient);
+    this.updateIngredient(ingredient);
     this.ingredientsChanged.emit(this.ingredients.slice());
   }
 
   addIngredientsFromRecipe(ingredients: Ingredient[]) {
-    this.ingredients.push(...ingredients);
+    ingredients.forEach(newIngredient => {
+      this.updateIngredient(newIngredient);
+    });
     this.ingredientsChanged.emit(this.ingredients.slice());
   }
+
+  private updateIngredient(newIngredient: Ingredient) {
+    const existingIngredientIndex = this.ingredients.findIndex(ingredient =>
+      ingredient.name.toLowerCase() === newIngredient.name.toLowerCase());
+    if (existingIngredientIndex !== -1) {
+      this.ingredients[existingIngredientIndex].amount += Number(newIngredient.amount);
+    } else {
+      this.ingredients.push(newIngredient);
+    }
+  }
 }
+
