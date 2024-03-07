@@ -1,4 +1,5 @@
-import { EventEmitter, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 import { Ingredient } from 'src/app/models/ingredient';
 
 @Injectable({
@@ -6,7 +7,7 @@ import { Ingredient } from 'src/app/models/ingredient';
 })
 
 export class ShoppingListService {
-  ingredientsChanged = new EventEmitter<Ingredient[]>();
+  ingredientsChanged = new Subject<Ingredient[]>();
   private ingredients: Ingredient[] = [
     new Ingredient('Trigo', 5),
     new Ingredient('Tomate', 10),
@@ -18,20 +19,22 @@ export class ShoppingListService {
   }
 
   addIngredient(ingredient: Ingredient) {
+    ingredient.amount = +ingredient.amount;
     this.updateIngredient(ingredient);
-    this.ingredientsChanged.emit(this.ingredients.slice());
+    this.ingredientsChanged.next(this.ingredients.slice());
   }
 
   addIngredientsFromRecipe(ingredients: Ingredient[]) {
     ingredients.forEach(newIngredient => {
       this.updateIngredient(newIngredient);
     });
-    this.ingredientsChanged.emit(this.ingredients.slice());
+    this.ingredientsChanged.next(this.ingredients.slice());
   }
 
   private updateIngredient(newIngredient: Ingredient) {
     const existingIngredientIndex = this.ingredients.findIndex(ingredient =>
       ingredient.name.toLowerCase() === newIngredient.name.toLowerCase());
+
     if (existingIngredientIndex !== -1) {
       this.ingredients[existingIngredientIndex].amount += Number(newIngredient.amount);
     } else {

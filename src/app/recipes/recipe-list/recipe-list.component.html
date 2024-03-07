@@ -1,12 +1,20 @@
-<div class="row container-list-recipe">
-    <div class="col-12">
-        <app-recipe-item *ngFor="let recipeElement of recipes; let i = index" [recipe]="recipeElement" [index]="i">
-        </app-recipe-item>
-    </div>
-</div>
+<div class="container">
 
-<div class="row">
-    <div class="col-12 d-flex justify-content-end mb-3">
-        <button class="btn btn-success" (click)="onNewRecipe()">Adicionar Receita</button>
+    <div class="container-list">
+        <div class="row container-list-recipe">
+            <div class="col-12">
+                <app-recipe-item *ngFor="let recipeElement of recipes; let i = index" [recipe]="recipeElement"
+                    [index]="i">
+                </app-recipe-item>
+            </div>
+        </div>
     </div>
+
+    <div class="row">
+        <div class="col-12 d-flex justify-content-end mb-3">
+            <button class="btn btn-success" (click)="onNewRecipe()">Adicionar Receita</button>
+        </div>
+    </div>
+
+
 </div>

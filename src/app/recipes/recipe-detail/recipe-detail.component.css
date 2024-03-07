@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: center;
     padding: 30px;
-    max-height: 80vh;
+    height: 80vh;
     border: 1px solid #00000030;
     border-radius: 50px;
     transition: .4s;
@@ -11,18 +11,23 @@
     opacity: .6;
 }
 
+.container:hover {
+    opacity: 1;
+}
+
 .container-content {
     overflow: scroll;
+    overflow-x: hidden;
 }
 
 .container::-webkit-scrollbar,
 .container-content::-webkit-scrollbar {
-    width: 6px;
+    width: 5px;
 }
 
 .container::-webkit-scrollbar-thumb,
 .container-content::-webkit-scrollbar-thumb {
-    background-color: none;
+    background-color: #0000000C;
     border-radius: 10px;
     height: 40px;
 }
@@ -31,12 +36,6 @@
 .container-content::-webkit-scrollbar-track {
     background-color: transparent;
 }
-
-
-.container:hover {
-    opacity: 1;
-}
-
 
 .img-details {
     width: 350px;
@@ -47,6 +46,7 @@
 .list-group-item {
     margin-top: 10px;
     border: 1px solid rgb(222, 226, 230);
+    margin-right: 10px;
 }
 
 .list-group-item:last-child {
