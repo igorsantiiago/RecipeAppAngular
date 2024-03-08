@@ -1,7 +1,14 @@
-# RecipesApp
+## Registro de Receitas
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.10.
+### 🚧 Em desenvolvimento 🚧
 
-## Development server
+Esta aplicação fornece a habilidade de registrar receitas e adicionar ingredientes para uma lista de compras. 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Os dados da aplicação não são persistidos até o momento.
+
+Projeto esta sendo utilizado para a prática de Angular 16.
+
+## 💻 Tecnologias
+- Angular 16
+
+### 🚧 Em desenvolvimento 🚧
