@@ -13,6 +13,9 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
   ingredients: Ingredient[];
   private ingredientChangeSubscription: Subscription;
 
+  private clearActiveIndexSubscription: Subscription;
+  activeIndex: number = null;
+
   constructor(private shoppingListService: ShoppingListService) { }
 
   ngOnInit(): void {
@@ -20,9 +23,19 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
     this.ingredientChangeSubscription = this.shoppingListService.ingredientsChanged.subscribe((ingredients: Ingredient[]) => {
       this.ingredients = ingredients;
     });
+
+    this.clearActiveIndexSubscription = this.shoppingListService.clearActiveIndex.subscribe(() => {
+      this.activeIndex = null;
+    });
   }
 
   ngOnDestroy(): void {
     this.ingredientChangeSubscription.unsubscribe();
+    this.clearActiveIndexSubscription.unsubscribe();
+  }
+
+  onEditItem(index: number) {
+    this.shoppingListService.startEditMode.next(index);
+    this.activeIndex = index; // Define o índice do ingrediente ativo
   }
 }

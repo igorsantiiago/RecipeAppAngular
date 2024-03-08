@@ -12,4 +12,12 @@ export class RecipeItemComponent implements OnInit {
   @Input() index: number;
 
   ngOnInit(): void { }
+
+  truncateText(description: string, maxLength: number): string {
+    if (description.length > maxLength) {
+      return description.substring(0, maxLength) + '...'; // Truncate and add ellipsis
+    } else {
+      return description;
+    }
+  }
 }

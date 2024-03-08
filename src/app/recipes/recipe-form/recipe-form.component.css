@@ -1,0 +1,63 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px;
+    height: 80vh;
+    border: 1px solid #00000030;
+    border-radius: 50px;
+    transition: .4s;
+    box-shadow: 10px 10px 10px 10px #00000030;
+    opacity: 1;
+}
+
+.container-content {
+    overflow: scroll;
+    overflow-x: hidden;
+    padding: 20px;
+}
+
+.container::-webkit-scrollbar,
+.container-content::-webkit-scrollbar {
+    width: 5px;
+}
+
+.container::-webkit-scrollbar-thumb,
+.container-content::-webkit-scrollbar-thumb {
+    background-color: #0000000C;
+    border-radius: 10px;
+    height: 40px;
+}
+
+.container::-webkit-scrollbar-track,
+.container-content::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.form-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-control {
+    margin: 5px 0px;
+}
+
+.btn-form {
+    margin: 0px 5px;
+}
+
+.btn-ingredients {
+    margin: 5px 0px 0px 0px;
+}
+
+.img-preview {
+    width: 200px;
+    margin: 10px 0px;
+}
+
+input.ng-invalid.ng-touched,
+textarea.ng-invalid.ng-touched {
+    border: 1px solid transparent;
+    box-shadow: 0px 0px 3px 1px palevioletred;
+}

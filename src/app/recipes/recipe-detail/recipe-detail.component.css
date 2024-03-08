@@ -18,6 +18,7 @@
 .container-content {
     overflow: scroll;
     overflow-x: hidden;
+    height: 80vh;
 }
 
 .container::-webkit-scrollbar,

@@ -2,8 +2,8 @@
     routerLinkActive="active box-active">
     <div class="d-flex align-items-start">
         <div>
-            <h4 class="list-group-item-heading">{{recipe.name}}</h4>
-            <p class="list-group-item-text">{{recipe.description}}</p>
+            <h4 class="list-group-item-heading">{{truncateText(recipe.name, 20)}}</h4>
+            <p class="list-group-item-text">{{ truncateText(recipe.description, 35)}}</p>
         </div>
         <div class="ms-auto">
             <img src="{{recipe.imagePath}}" alt="{{recipe.name}}" class="img-fluid" routerLinkActive="img-fluid-active">
