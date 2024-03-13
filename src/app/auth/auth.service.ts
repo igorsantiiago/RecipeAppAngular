@@ -4,6 +4,7 @@ import { BehaviorSubject, catchError, tap, throwError } from 'rxjs';
 import { User } from '../models/user';
 import { DataStorageService } from '../shared/_services/data-storage.service';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 export interface AuthResponseData {
   kind: string;
@@ -25,7 +26,7 @@ export class AuthService {
   constructor(private http: HttpClient, private router: Router) { }
 
   signup(email: string, password: string) {
-    return this.http.post<AuthResponseData>('__________ADD FIREBASE URL ENDPOINT HERE__________', {
+    return this.http.post<AuthResponseData>(environment.FIREBASE_API_KEY_SIGNUP, {
       email: email,
       password: password,
       returnSecureToken: true
@@ -35,7 +36,7 @@ export class AuthService {
   }
 
   login(email: string, password: string) {
-    return this.http.post<AuthResponseData>('__________ADD FIREBASE URL ENDPOINT HERE__________', {
+    return this.http.post<AuthResponseData>(environment.FIREBASE_API_KEY_LOGIN, {
       email: email,
       password: password,
       returnSecureToken: true

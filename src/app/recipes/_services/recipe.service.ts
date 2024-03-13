@@ -11,6 +11,7 @@ import { ShoppingListService } from 'src/app/shopping/_services/shopping-list.se
 export class RecipeService {
   recipeChanges = new Subject<Recipe[]>();
 
+  // Dummy Recipes
   // private recipes: Recipe[] = [
   //   new Recipe('Croissant', 'Descrição para a receita de croissant.',
   //     'https://res.cloudinary.com/dz4vge9zk/image/upload/v1708355988/udemy-recipeapp/hbb55kkx7qqpibi8uxh2.jpg',
