@@ -4,10 +4,19 @@
     background-color: #00000030;
 }
 
+.navbar-brand::after {
+    content: "Livro de Receitas";
+    padding-left: 20px;
+}
+
 .navigation-links:hover {
     font-weight: 500;
 }
 
 .linkActive {
     border-top: 2px solid #00000030;
+}
+
+.nav-auth {
+    width: 100px;
 }

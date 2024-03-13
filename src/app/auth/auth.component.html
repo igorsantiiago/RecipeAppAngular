@@ -1,0 +1,56 @@
+<div class="container">
+    <div class="row container-auth">
+        <div class="col-12">
+
+            <div class="alert alert-danger" style="margin-bottom: 20px;" *ngIf="error">
+                <p>{{error}}</p>
+            </div>
+
+            <div *ngIf="isLoading" class="loading-spinner">
+                <app-loading-spinner></app-loading-spinner>
+            </div>
+
+            <form [formGroup]="authForm" (ngSubmit)="onSubmit()" *ngIf="!isLoading">
+                <h3 class="auth-title">{{isLoginMode ? 'Entrar' : 'Nova conta'}}</h3>
+
+                <div class="help-block-container"
+                    *ngIf="!authForm.get('email').valid && authForm.get('email').touched || !authForm.get('password').valid && authForm.get('password').touched">
+                    <hr>
+                    <span class="help-block" *ngIf="!authForm.get('email').valid && authForm.get('email').touched">*
+                        E-mail
+                        inválido!</span>
+                    <span class="help-block"
+                        *ngIf="!authForm.get('password').valid && authForm.get('password').touched">*
+                        Senha
+                        inválido!</span>
+                    <hr>
+                </div>
+
+
+
+                <div class="form-group">
+                    <label for="email" class="form-label">
+                        <span class="help-block"
+                            *ngIf="!authForm.get('email').valid && authForm.get('email').touched">*</span>
+                        E-mail
+                    </label>
+                    <input type="email" id="email" class="form-control" formControlName="email">
+                </div>
+
+                <div class="form-group">
+                    <label for="password" class="form-label">
+                        <span class="help-block"
+                            *ngIf="!authForm.get('password').valid && authForm.get('password').touched">*</span>
+                        Senha</label>
+                    <input type="password" id="password" class="form-control" formControlName="password">
+                </div>
+                <div class="form-group__buttons">
+                    <button class="btn btn-auth btn-auth__submit" type="submit">{{isLoginMode ? 'Entrar' :
+                        'Registrar'}}</button>
+                    <button class="btn btn-auth" type="button" (click)="onSwitchMode()">{{isLoginMode ? 'Criar conta' :
+                        'Fazer login'}}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
